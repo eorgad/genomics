@@ -1,0 +1,3 @@
+
+Import the Genomics-demo.xml file into a new process group in Nifi
+Place the bash script atlas2.sh inside a directory that ExecuteSteamProcessos indicates
