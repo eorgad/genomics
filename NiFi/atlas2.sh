@@ -12,7 +12,7 @@ endTimeStamp=$8
 
 echo "The Params:  $1 $2 $3 $4 $5 $6 $7 $8" > /home/nifi/logtext.txt
 
-C1='/bin/curl  -u admin:admin-password1 -ik -H "Content-Type: application/json" -X POST http://xxxx:21000/api/atlas/v2/entity/bulk -d'
+C1='/bin/curl  -u admin:password -ik -H "Content-Type: application/json" -X POST http://xxxx:21000/api/atlas/v2/entity/bulk -d'
 C2='{"entities": [{"typeName": "ztest_hdfs_path_genseq_raw", "attributes": {'
 
 P1='"qualifiedName": "ztest_hdfs_path_genseq_raw.'${sampleID}'",'
