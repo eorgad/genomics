@@ -29,3 +29,15 @@ ENV HAIL_HOME=/hail/hail
 ENV ANACONDA_HOME=/hail/anaconda2
 
 ENV PATH=$PATH:$ANACONDA_HOME:$GRADLE_HOME:$HAIL_HOME:$SPARK_HOME
+
+#HTTP_PROXY    ENV HTTP_PROXY "http://127.0.0.1:8888"
+
+ENV PATH=$PATH:$HAIL_HOME/bin
+ENV PATH=$PATH:/hail/anaconda2/bin
+
+RUN jupyter notebook --generate-config
+
+RUN sed -i 's,localhost,0.0.0.0,g' /root/.jupyter/jupyter_notebook_config.py
+RUN sed -i 's,#c.NotebookApp.ip,c.NotebookApp.ip,g' /root/.jupyter/jupyter_notebook_config.py
+
+ENTRYPOINT ["jhail","--allow-root"]
