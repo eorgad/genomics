@@ -37,6 +37,10 @@ zip -r hail.zip hail/
 
 ``docker run -dit <Docker image id>``
 
+#### Run the docker container with enabling port access to Jupyter by running the below command:
+
+``docker run -p 8888:8888 <Docker image id>``
+
 #### Make sure the container is running by running the below command:
 
 ``docker ps -a``
